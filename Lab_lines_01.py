@@ -5,8 +5,8 @@ def is_palindrome(line):
     r_line = line[::-1]
     return line == r_line
 
-line = str(input("Введите строку - "))
 
+line = str(input("Введите строку - "))
 line = line.lower()
 symbols = "!?-+* .,':;="
 
