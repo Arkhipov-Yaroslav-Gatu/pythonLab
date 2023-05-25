@@ -14,16 +14,28 @@ def CheckNumber():
     num = int(input("Введите число: "))
     while True:
         if 100000 <= num <= 200000:
-            break
-    return num
+            return num
+        else:
+            return "Не вверно"
 
 def GetNaturalDivisors(a, b):
     a_min = min(a, b)
     b_max = max(a, b)
     print(f"Максимальное значение - {b_max}\nМинимальное значение - {a_min}\n")
     
-    for a in range(b):
-        print(a, " ", b)
+    for i in range(a_min, b_max):
+        d = []
+        n = 0
+        j = 2
+        while j*j < i:
+            if i % j == 0:
+                n += 2
+                d.extend([j, i//j])
+                if n > 2:
+                    break
+            j += 1
+        if n == 2:
+            print(*d)
 
 
 a = CheckNumber()
